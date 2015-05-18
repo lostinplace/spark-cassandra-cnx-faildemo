@@ -2,7 +2,7 @@ name := "cassandra-connector-failure-demo"
 
 version := "1.0"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.10.4"
 
 resolvers ++= Seq(
   "Typesafe Releases" at "http://repo.typesafe.com/ typesafe/releases",
@@ -19,7 +19,8 @@ libraryDependencies += "org.apache.spark" % "spark-core_2.10" % sparkVersion % "
 
 libraryDependencies += "com.datastax.spark" % "spark-cassandra-connector_2.10" % "1.2.0"
 
-assemblyMergeStrategy in assembly := {
-  case PathList("META-INF", xs@_*) => MergeStrategy.discard
-  case x => MergeStrategy.first
-}
+
+//assemblyMergeStrategy in assembly := {
+//  case PathList("META-INF", xs@_*) => MergeStrategy.discard
+//  case x => MergeStrategy.first
+//}
