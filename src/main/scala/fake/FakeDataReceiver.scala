@@ -1,4 +1,4 @@
-import scala.collection.mutable._
+package fake
 
 import org.apache.spark.Logging
 import org.apache.spark.streaming.receiver.Receiver
@@ -9,7 +9,7 @@ import scala.util.Random
 class FakeDataReceiver( )
   extends Receiver[String](StorageLevel.MEMORY_AND_DISK_2) with Logging {
 
-  System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+  println(" [*] Waiting for messages. To exit press CTRL+C")
 
 
   def onStart() {

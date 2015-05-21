@@ -1,3 +1,6 @@
+// start clean:
+DROP KEYSPACE IF EXISTS fake_data;
+
 CREATE KEYSPACE fake_data
 WITH replication = {
 	'class' : 'SimpleStrategy',
