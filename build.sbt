@@ -11,13 +11,13 @@ resolvers ++= Seq(
 
 resolvers += "spray" at "http://repo.spray.io/"
 
-val sparkVersion = "1.1.1"
+val sparkVersion = "1.2.2"
 
 libraryDependencies += "org.apache.spark" % "spark-streaming_2.10" % sparkVersion % "provided"
 
 libraryDependencies += "org.apache.spark" % "spark-core_2.10" % sparkVersion % "provided"
 
-libraryDependencies += "com.datastax.spark" % "spark-cassandra-connector_2.10" % "1.1.0"
+libraryDependencies += "com.datastax.spark" % "spark-cassandra-connector_2.10" % "1.2.1"
 
 assemblyMergeStrategy in assembly := {
   case PathList("META-INF", xs@_*) => MergeStrategy.discard

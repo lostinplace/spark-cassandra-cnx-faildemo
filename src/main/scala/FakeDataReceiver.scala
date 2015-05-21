@@ -19,7 +19,7 @@ class FakeDataReceiver
       override def run() {
         while(true){
           receive()
-          Thread.sleep(10)
+
         }
 
       }
