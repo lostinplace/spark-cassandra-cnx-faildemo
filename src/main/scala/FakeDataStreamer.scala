@@ -17,7 +17,7 @@ object FakeDataStreamer {
 
     config.setAppName("Fake Data Stream")
 
-    config.set("spark.cassandra.connection.host", "54.86.133.196")
+    config.set("spark.cassandra.connection.host", "52.7.208.252")
 
     val streamContext = new StreamingContext(config, Seconds(3) )
 
