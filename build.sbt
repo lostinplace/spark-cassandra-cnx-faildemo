@@ -12,7 +12,7 @@ resolvers ++= Seq(
 
 resolvers += "spray" at "http://repo.spray.io/"
 
-val sparkVersion = "1.2.2"
+val sparkVersion = "1.2.1"
 
 libraryDependencies += "org.apache.spark" %% "spark-streaming" % sparkVersion % "provided"
 
@@ -23,6 +23,7 @@ libraryDependencies += "com.datastax.spark" %% "spark-cassandra-connector" % "1.
 run in Compile <<= Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run))
 
 parallelExecution in assembly := false
+
 assemblyOption in assembly ~= { _.copy(includeScala = false) }
 
 assemblyOutputPath in assembly := new File("output/demo.jar")
