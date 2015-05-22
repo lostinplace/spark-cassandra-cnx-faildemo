@@ -1,5 +1,5 @@
 
-name := "cassandra-connector-success-demo"
+name := "cassandra-connector-bug-demo"
 
 version := "1.1"
 
