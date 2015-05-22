@@ -25,6 +25,8 @@ run in Compile <<= Defaults.runTask(fullClasspath in Compile, mainClass in (Comp
 parallelExecution in assembly := false
 assemblyOption in assembly ~= { _.copy(includeScala = false) }
 
+assemblyOutputPath in assembly := new File("output/demo.jar")
+
 assemblyMergeStrategy in assembly <<= (mergeStrategy in assembly) {
     (old) => {
       case PathList("com", "google", xs @ _*) => MergeStrategy.last
