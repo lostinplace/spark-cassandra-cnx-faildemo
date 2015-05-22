@@ -13,9 +13,6 @@ resolvers ++= Seq(
 resolvers += "spray" at "http://repo.spray.io/"
 
 val sparkVersion = "1.2.2"
-//val sparkVersion = "1.3.1"
-
-val sparkVersion = "1.2.1"
 
 libraryDependencies += "org.apache.spark" %% "spark-streaming" % sparkVersion % "provided"
 
@@ -28,14 +25,10 @@ run in Compile <<= Defaults.runTask(fullClasspath in Compile, mainClass in (Comp
 parallelExecution in assembly := false
 assemblyOption in assembly ~= { _.copy(includeScala = false) }
 
-mergeStrategy in assembly <<= (mergeStrategy in assembly) {
+assemblyMergeStrategy in assembly <<= (mergeStrategy in assembly) {
     (old) => {
       case PathList("com", "google", xs @ _*) => MergeStrategy.last
       case x => old(x)
     }
   }
 
-assemblyMergeStrategy in assembly := {
-  case PathList("META-INF", xs@_*) => MergeStrategy.discard
-  case x => MergeStrategy.first
-}
