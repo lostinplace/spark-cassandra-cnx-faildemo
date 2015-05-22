@@ -2,6 +2,8 @@
 I created this to demonstrate an unrecoverable exception that occurs in the spark-cassandra connector when saving high-volume datasets to tables
 
 # Preparation
+Note that this bug is only observable on *remote* cassandra clusters, so you will need to spin one up.  I recommend using the DSE AMI here: http://docs.datastax.com/en/datastax_enterprise/4.7/datastax_enterprise/install/installAMIlaunch.html
+
 in the cql folder there is a file called schema.cql, makes ure to execute it on your cassandra cluster to set the schema for the application
 Run these statements on your cassandra cluster to prepare it to accept your data
 
